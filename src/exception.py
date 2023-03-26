@@ -18,8 +18,9 @@ class CustomErrorHandler(Exception):
     
 if __name__ == "__main__":
     try:
-        a = 0/1
+        with open("txt1.txt") as f:
+            f.read()
     except Exception as e:
-        logging.info("division by zero")
+        logging.info("file not found error")
         raise CustomErrorHandler(e, sys)
     
