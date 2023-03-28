@@ -4,6 +4,7 @@ from src.exception import CustomErrorHandler
 from src.logger import logging
 from sklearn.model_selection import train_test_split
 import pandas as pd
+
 from dataclasses import dataclass
 
 @dataclass
@@ -46,5 +47,5 @@ class DataInjestion():
 if __name__ == "__main__":
     obj=DataInjestion()
     obj.data_injestion()
-    print(obj.all_path)
+
     

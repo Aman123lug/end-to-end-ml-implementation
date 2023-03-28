@@ -103,7 +103,7 @@ class Datatranform:
             y_train = lb.fit_transform(y)
             logging.info("model training started")
             #  model training
-            mode = model = MultinomialNB()
+            model = MultinomialNB()
             model.fit(X_train, y_train)
             filename = 'saved_ml_model/model.pkl'
             pickle.dump(model, open(filename, 'wb'))
