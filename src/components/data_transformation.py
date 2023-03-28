@@ -42,7 +42,16 @@ def getDoc(document):
     for doc in document:
         d.append(getStem(doc))
     return d
-class Datatranform:
+
+            
+def DataTranformForTest(text):
+    cv = CountVectorizer()
+    X = getDoc(text)
+    new_x = cv.fit_transform(X)
+    preprocess_data = new_x.toarray()
+    
+    return preprocess_data
+class Datatransform:
     def __init__(self):
         self.datatransformconfig = DatatranformationConfig()
         
@@ -112,11 +121,15 @@ class Datatranform:
             
         except Exception as e:
             CustomErrorHandler(e, sys)
-                        
+
+    
+        
+            
+                     
 if __name__ == "__main__":
     new_obj = DatatranformationConfig()
     
-    obj = Datatranform()
+    obj = Datatransform()
     
     obj.data_transformer("notebooks/data/spamsms.csv")
     obj.initailize_data_transform("notebooks/data/spamsms.csv", "notebooks/data/spamsms.csv")
